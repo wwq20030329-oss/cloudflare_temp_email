@@ -1,0 +1,762 @@
+# Instincts generated from https://github.com/wwq20030329-oss/cloudflare_temp_email
+# Generated: 2026-03-30T16:35:35.608Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: cloudflare_temp_email-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix, docs, feature, test
+
+## Evidence
+
+- 200 commits analyzed
+- Detected conventional commit pattern
+- Examples: chore(deps): bump nodemailer and imapflow in /e2e (#916), fix: surface backend deploy errors in GitHub Actions (#917)
+
+---
+id: cloudflare_temp_email-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Commit Length
+
+## Action
+
+Write moderate-length commit messages (~51 characters)
+
+## Evidence
+
+- Average commit message length: 51 chars
+- Based on 200 commits
+
+---
+id: cloudflare_temp_email-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: cloudflare_temp_email-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: cloudflare_temp_email-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: cloudflare_temp_email-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: 
+
+---
+id: cloudflare_temp_email-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Test Framework
+
+## Action
+
+Use playwright as the test framework
+
+## Evidence
+
+- Test framework detected: playwright
+- File pattern: *.spec.ts
+
+---
+id: cloudflare_temp_email-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Test Naming
+
+## Action
+
+Name test files using the pattern: *.spec.ts
+
+## Evidence
+
+- File pattern: *.spec.ts
+- Consistent across test files
+
+---
+id: cloudflare_temp_email-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Test Types
+
+## Action
+
+Write unit, integration, e2e tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration, e2e
+- Coverage config: no
+
+---
+id: cloudflare_temp_email-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~19x per month
+- Files: worker/src/*, frontend/src/components/*, e2e/fixtures/*
+
+---
+id: cloudflare_temp_email-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: src/**/*
+
+---
+id: cloudflare_temp_email-workflow-dependency-upgrade-across-subprojects
+trigger: "when doing dependency upgrade across subprojects"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow Dependency Upgrade Across Subprojects
+
+## Action
+
+Follow the dependency-upgrade-across-subprojects workflow:
+1. Update dependency versions in package.json or requirements.txt
+2. Update lock files (pnpm-lock.yaml, package-lock.json)
+3. Update Dockerfile or related CI files if needed
+4. Commit with chore(deps): or chore: upgrade dependencies message
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: frontend/package.json, frontend/pnpm-lock.yaml, worker/package.json
+
+---
+id: cloudflare_temp_email-workflow-feature-development-with-docs-and-changelog
+trigger: "when doing feature development with docs and changelog"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow Feature Development With Docs And Changelog
+
+## Action
+
+Follow the feature-development-with-docs-and-changelog workflow:
+1. Implement feature in backend and/or frontend code
+2. Update or add relevant documentation in vitepress-docs (EN/zh)
+3. Add or update CHANGELOG.md and CHANGELOG_EN.md
+4. Update types or config templates if needed
+5. Commit with feat: or similar message
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: worker/src/**/*.ts, frontend/src/**/*.vue, frontend/src/**/*.js
+
+---
+id: cloudflare_temp_email-workflow-bugfix-with-changelog-update
+trigger: "when doing bugfix with changelog update"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow Bugfix With Changelog Update
+
+## Action
+
+Follow the bugfix-with-changelog-update workflow:
+1. Fix bug in code (backend/frontend)
+2. Update CHANGELOG.md and CHANGELOG_EN.md
+3. Add or update tests if relevant
+4. Commit with fix: message
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: worker/src/**/*.ts, frontend/src/**/*.vue, frontend/src/**/*.js
+
+---
+id: cloudflare_temp_email-workflow-e2e-test-addition
+trigger: "when doing e2e test addition"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow E2e Test Addition
+
+## Action
+
+Follow the e2e-test-addition workflow:
+1. Create new test file in e2e/tests/api or e2e/tests/browser
+2. Update or add helpers in e2e/fixtures if needed
+3. Update e2e/fixtures/wrangler.toml.e2e if new env vars are required
+4. Commit with test: add E2E test message
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: e2e/tests/api/*.spec.ts, e2e/tests/browser/*.spec.ts, e2e/fixtures/test-helpers.ts
+
+---
+id: cloudflare_temp_email-workflow-documentation-update
+trigger: "when doing documentation update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow Documentation Update
+
+## Action
+
+Follow the documentation-update workflow:
+1. Edit vitepress-docs/docs/en/guide/**/*.md and vitepress-docs/docs/zh/guide/**/*.md
+2. Update CHANGELOG.md and CHANGELOG_EN.md if documenting a change
+3. Edit README.md, README_EN.md, or CLAUDE.md if project-level docs are affected
+4. Commit with docs: message
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: vitepress-docs/docs/en/guide/**/*.md, vitepress-docs/docs/zh/guide/**/*.md, CHANGELOG.md
+
+---
+id: cloudflare_temp_email-workflow-ci-cd-workflow-update
+trigger: "when doing ci cd workflow update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow Ci Cd Workflow Update
+
+## Action
+
+Follow the ci-cd-workflow-update workflow:
+1. Edit .github/workflows/*.yml or .github/workflows/*.yaml
+2. Update related scripts or Dockerfiles if needed
+3. Commit with fix:, chore:, or similar message
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/*.yml, .github/workflows/*.yaml, e2e/Dockerfile.*
+
+---
+id: cloudflare_temp_email-workflow-refactor-with-test-or-doc-update
+trigger: "when doing refactor with test or doc update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Workflow Refactor With Test Or Doc Update
+
+## Action
+
+Follow the refactor-with-test-or-doc-update workflow:
+1. Refactor code (move, split, or rewrite files/modules)
+2. Update or add tests to cover refactored logic
+3. Update documentation or changelogs to reflect changes
+4. Commit with refactor: message
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: worker/src/**/*.ts, frontend/src/**/*.js, frontend/src/**/*.vue
+
+---
+id: cloudflare_temp_email-instinct-file-naming
+trigger: "When creating a new file"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct File Naming
+
+## Action
+
+Name the file using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: cloudflare_temp_email-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: cloudflare_temp_email-instinct-class-naming
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: cloudflare_temp_email-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: cloudflare_temp_email-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: cloudflare_temp_email-instinct-export-style
+trigger: "When exporting modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: cloudflare_temp_email-instinct-test-file-pattern
+trigger: "When creating a new test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Test File Pattern
+
+## Action
+
+Name the file with a .spec.ts suffix
+
+## Evidence
+
+- Pattern in testing.filePattern: *.spec.ts
+- Files like e2e/tests/api/*.spec.ts
+
+---
+id: cloudflare_temp_email-instinct-test-framework
+trigger: "When writing tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Test Framework
+
+## Action
+
+Use Playwright as the testing framework
+
+## Evidence
+
+- Pattern in testing.framework: playwright
+- e2e/playwright.config.ts
+
+---
+id: cloudflare_temp_email-instinct-test-types
+trigger: "When adding tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Test Types
+
+## Action
+
+Include unit, integration, and e2e test types as appropriate
+
+## Evidence
+
+- Pattern in testing.testTypes: unit, integration, e2e
+
+---
+id: cloudflare_temp_email-instinct-commit-format
+trigger: "When making a commit"
+confidence: 0.95
+domain: git
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Commit Format
+
+## Action
+
+Use Conventional Commits format with prefixes like feat, fix, docs, chore, test, feature
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples like fix: surface backend deploy errors in GitHub Actions (#917)
+
+---
+id: cloudflare_temp_email-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 50 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 51
+
+---
+id: cloudflare_temp_email-instinct-dependency-upgrade
+trigger: "When dependencies need to be updated for bugfixes, security, or compatibility"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Dependency Upgrade
+
+## Action
+
+Update dependency versions and lock files in all relevant subprojects, update Dockerfile/CI if needed, and commit with chore(deps): or chore: upgrade dependencies
+
+## Evidence
+
+- Workflow: dependency-upgrade-across-subprojects
+- Commits like chore(deps): bump nodemailer and imapflow in /e2e (#916)
+
+---
+id: cloudflare_temp_email-instinct-feature-development
+trigger: "When adding a new feature or significant capability"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Feature Development
+
+## Action
+
+Implement feature in backend/frontend, update docs (EN/zh), update changelogs, update types/config if needed, and commit with feat: or similar message
+
+## Evidence
+
+- Workflow: feature-development-with-docs-and-changelog
+- Commits like feat: return address_id in /admin/new_address response (#913)
+
+---
+id: cloudflare_temp_email-instinct-bugfix
+trigger: "When a bug or regression is discovered"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Bugfix
+
+## Action
+
+Fix the bug, update changelogs, add/update tests if relevant, and commit with fix: message
+
+## Evidence
+
+- Workflow: bugfix-with-changelog-update
+- Commits like fix(imap): fix mojibake in nested emails (#909)
+
+---
+id: cloudflare_temp_email-instinct-e2e-test-addition
+trigger: "When a new feature is added or a regression/bugfix needs coverage"
+confidence: 0.93
+domain: workflow
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct E2e Test Addition
+
+## Action
+
+Add new E2E test file in e2e/tests/api or e2e/tests/browser, update helpers or env config if needed, and commit with test: add E2E test message
+
+## Evidence
+
+- Workflow: e2e-test-addition
+- Commits like test: add E2E tests for webhook trigger on incoming mail (#878)
+
+---
+id: cloudflare_temp_email-instinct-documentation-update
+trigger: "When documentation needs to be improved, clarified, or synced with code changes"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Documentation Update
+
+## Action
+
+Edit vitepress-docs (EN/zh), update changelogs if documenting a change, edit README/CLAUDE.md if project-level docs are affected, and commit with docs: message
+
+## Evidence
+
+- Workflow: documentation-update
+- Commits like docs: clarify Address JWT vs User JWT and reorganize API menu (#914)
+
+---
+id: cloudflare_temp_email-instinct-ci-cd-update
+trigger: "When CI/CD pipeline needs to be fixed or improved"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Ci Cd Update
+
+## Action
+
+Edit .github/workflows/*.yml/.yaml, update related scripts or Dockerfiles if needed, and commit with fix:, chore:, or similar message
+
+## Evidence
+
+- Workflow: ci-cd-workflow-update
+- Files like .github/workflows/docs_deploy.yml
+
+---
+id: cloudflare_temp_email-instinct-refactor
+trigger: "When code needs to be cleaned up, modularized, or reorganized"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: wwq20030329-oss/cloudflare_temp_email
+---
+
+# Cloudflare_temp_email Instinct Refactor
+
+## Action
+
+Refactor code, update/add tests, update docs/changelogs, and commit with refactor: message
+
+## Evidence
+
+- Workflow: refactor-with-test-or-doc-update
+- Commits like fix: preserve HTML content when replying to HTML emails (#856)
+
